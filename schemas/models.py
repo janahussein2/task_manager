@@ -19,8 +19,13 @@ class UserResponse(BaseModel):
     email: str
     phone: Optional[str]
 
-    class Config:
-        orm_mode = True  
+
+    model_config = {
+        "from_attributes": True  #  الطريقة الجديدة
+    }
+    
+  #  class Config:
+  #      orm_mode = True 
 
 
 class TaskCreate(BaseModel):
@@ -44,5 +49,6 @@ class TaskResponse(BaseModel):
     status: str
     assigned_to: Optional[int]
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
